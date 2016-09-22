@@ -1,0 +1,85 @@
+/email:
+  post:
+    description: user login by email
+    queryParameters:
+      user[email]:
+        type: string
+        required: true
+        example: 'ilake@5xruby.tw'
+      user[password]:
+        type: string
+        required: true
+        example: 'password'
+
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              user_session?: UserSession
+
+/facebook:
+  post:
+    description: user login by facebook
+    queryParameters:
+      user[email]:
+        type: string
+        required: true
+        example: 'ilake@5xruby.tw'
+      user[provider]:
+        type: string
+        required: true
+        example: 'facebook'
+      user[uid]:
+        type: string
+        required: true
+        example: '123456'
+      user[access_token]:
+        type: string
+        required: true
+        example: '123456'
+
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              user_session?: UserSession
+
+/google_plus:
+  post:
+    description: user login by Google
+    queryParameters:
+      user[email]:
+        type: string
+        required: true
+        example: 'ilake@5xruby.tw'
+      user[provider]:
+        type: string
+        required: true
+        example: 'facebook'
+      user[uid]:
+        type: string
+        required: true
+        example: '123456'
+      user[access_token]:
+        type: string
+        required: true
+        example: '123456'
+
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              user_session?: UserSession
+delete:
+  description: |
+    Logout
+    pages => 12
+  responses:
+    200: !include ../includes/respond_ok.raml
+

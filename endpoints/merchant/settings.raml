@@ -1,0 +1,12 @@
+/toggle-order-push-notifications:
+  put:
+    description: |
+      Toggle order push notification
+      page => 12
+    responses:
+      200: !include ../../includes/respond_merchant.raml
+/payments: !include ./settings_payments.raml
+/social-media: !include ./settings_social_media.raml
+/taxes: !include ./settings_taxes.raml
+/shipping: !include ./settings_shipping.raml
+/domain: !include ./settings_domain.raml

@@ -1,0 +1,35 @@
+# TODO: q on zeplin 15
+/toggle-cash-on-delivery:
+  put:
+    description: |
+      Toggle cash on delivery for merchant
+      page => 09a-Setup Payment-Enabled
+    responses:
+      200: !include ../../includes/respond_merchant.raml
+/toggle-citrus:
+  put:
+    description: |
+      Toggle citrus pay for merchant
+      page => 09c-Setup Payment-Enabled
+    responses:
+      200: !include ../../includes/respond_merchant.raml
+/citrus:
+  put:
+    queryParameters:
+      citrus[access_key]:
+        type: string
+        required: true
+        example: 'abcddefgh'
+      citrus[secret_key]:
+        type: string
+        required: true
+        example: 'abcddefgh'
+      citrus[vanity_url_part]:
+        type: string
+        required: true
+        example: 'abcddefgh'
+    description: |
+      Update citrus pay api keys
+      page => 15b
+    responses:
+      200: !include ../../includes/respond_merchant.raml

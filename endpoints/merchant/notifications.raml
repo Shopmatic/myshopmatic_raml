@@ -1,0 +1,31 @@
+get:
+  is: [ pagination ]
+  description: |
+    Get notifications.
+    pages => 18
+  responses:
+    200:
+      body:
+        application/json:
+          type: object
+          properties:
+            notifications?: Notification[]
+            pagination: Pagination
+/{notification_id}:
+  uriParameters:
+    notification_id:
+      type: number
+      description: "Notification id"
+      example: 123
+  get:
+    description: |
+      Get notification in detail.
+      pages => 18
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              notification?: Notification
+

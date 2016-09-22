@@ -1,0 +1,16 @@
+put:
+  description: |
+    Update shipping fields of merchant.
+    page => 17
+  queryParameters:
+    setting[fee]:
+      type: number
+      required: false
+      example: 1
+    setting[free_enabled]:
+      type: boolean
+      required: false
+    setting[minimum_totoal_for_free_shipping]:
+      type: number
+      required: false
+      example: 1

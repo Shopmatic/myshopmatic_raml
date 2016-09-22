@@ -1,0 +1,31 @@
+put:
+  description: |
+    Update social media
+    page => 14
+  queryParameters:
+    settings[facebook_url]:
+      type: string
+      required: false
+      example: 'http://xxxx.com'
+    settings[instagram_url]:
+      type: string
+      required: false
+      example: 'http://xxxx.com'
+    settings[twitter_url]:
+      type: string
+      required: false
+      example: 'http://xxxx.com'
+    settings[pinterest_url]:
+      type: string
+      required: false
+      example: 'http://xxxx.com'
+    settings[googleplus_url]:
+      type: string
+      required: false
+      example: 'http://xxxx.com'
+    settings[linkedin_url]:
+      type: string
+      required: false
+      example: 'http://xxxx.com'
+  responses:
+    200: !include ../../includes/respond_merchant.raml

@@ -1,0 +1,12 @@
+post:
+  description: |
+    Publish merchant
+    pages => 10a, 10c
+  responses:
+    200: !include ../../includes/respond_merchant.raml
+delete:
+  description: |
+    Unpublish merchant
+    pages => 10c
+  responses:
+    200: !include ../../includes/respond_merchant.raml

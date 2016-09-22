@@ -1,0 +1,18 @@
+type: object
+properties:
+  current_page?:
+    type: integer
+    example: 2
+  total_page?:
+    type: integer
+    example: 10
+  total_count?:
+    type: integer
+    description: "total raw data count of list"
+    example: 100
+  offset?:
+    type: integer
+  next_page_uri?:
+    type: string
+    example: "http://xxxx.com/products.json?page=3"
+    description: "next api uri for query next page data, if null means there are no next page"

@@ -1,0 +1,50 @@
+is: [ session_secured ]
+get:
+  description: |
+    Get products of merchant
+    This api may use while scrolling
+    pages => 10d
+  is: [ pagination ]
+  responses:
+    200:
+      body:
+        application/json:
+          type: object
+          properties:
+            products?: Product[]
+            pagination: Pagination
+post:
+  description: "Create product"
+  is: [ product_params ]
+  responses:
+    200:
+      body:
+        application/json:
+          type: object
+          properties:
+            product?: Product
+/{product_id}:
+  uriParameters:
+    product_id:
+      type: number
+      description: "Product id"
+      example: 123
+  delete:
+    description: "Delete product"
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              product?: Product
+  put:
+    description: "Update product"
+    is: [ product_params ]
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              product?: Product

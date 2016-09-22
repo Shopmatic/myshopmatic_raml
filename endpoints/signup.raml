@@ -1,0 +1,70 @@
+/email:
+  post:
+    description: user sign up by email
+    queryParameters:
+      user[email]:
+        type: string
+        required: true
+        example: 'ilake@5xruby.tw'
+      user[password]:
+        type: string
+        required: true
+        example: 'password'
+
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              user_session?: UserSession
+
+/facebook:
+  post:
+    description: user sign up by facebook
+    queryParameters:
+      user[email]:
+        type: string
+        required: true
+        example: 'ilake@5xruby.tw'
+      user[uid]:
+        type: string
+        required: true
+        example: '123456'
+      user[access_token]:
+        type: string
+        required: true
+        example: '123456'
+
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              user_session?: UserSession
+
+/googleplus:
+  post:
+    description: user sign up by Google
+    queryParameters:
+      user[email]:
+        type: string
+        required: true
+        example: 'ilake@5xruby.tw'
+      user[uid]:
+        type: string
+        required: true
+        example: '123456'
+      user[access_token]:
+        type: string
+        required: true
+        example: '123456'
+
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              user_session?: UserSession

@@ -1,0 +1,12 @@
+get:
+  description: |
+    Get merchant with products
+    pages => 10d
+  responses:
+    200:
+      body:
+        application/json:
+          type: object
+          properties:
+            merchant?: Merchant
+            products?: Product[]

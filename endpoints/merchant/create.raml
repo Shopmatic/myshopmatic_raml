@@ -1,0 +1,34 @@
+description: |
+  Create merchant basic infomation.
+  page => 08
+queryParameters:
+  merchant[name]:
+    type: string
+    required: true
+    example: "abc"
+  merchant[address][address]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[address][city]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[address][state]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[address][country]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[address][zip_code]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[phone]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[first_name]:
+    type: string
+    required: true
+  merchant[last_name]:
+    type: string
+    required: true
+responses:
+  200: !include ../../includes/respond_merchant.raml

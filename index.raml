@@ -1,0 +1,20 @@
+#%RAML 1.0
+title: Shopmatic Mobile API
+version: 0.1
+protocols: [ HTTP, HTTPS ]
+mediaType: 'application/json'
+baseUri: https://api.shopmakerapp.com
+traits: !include traits.raml
+types: !include types.raml
+securitySchemes:
+  client_secured:
+    type: x-custom
+    describedBy: !include traits/client_secured.raml
+securedBy: [ client_secured ]
+/signup: !include endpoints/signup.raml
+/sessions: !include endpoints/sessions.raml
+/passwords: !include endpoints/passwords.raml
+/images: !include endpoints/images.raml
+/products: !include endpoints/products.raml
+/orders: !include endpoints/orders.raml
+/merchant: !include endpoints/merchant.raml

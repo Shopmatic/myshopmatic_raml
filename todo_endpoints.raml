@@ -1,0 +1,86 @@
+# ApiMobile::Merchants::FirstSettingService.new(merchant, params).run
+#   - 08a-Shop Info
+#   - return Merchant
+
+# ApiMobile::Merchants::UpdateInfoService.new(merchant, params).run
+#   - 13-Profile
+#   - 19-Shop Policy
+#   - return Merchant
+
+# ApiMobile::Merchants::ValidatesDomainService.new(merchant, new_domain).run
+#  - 08a-Change Domain Name
+#  - return true or false
+#    - if false, should have error message
+
+# ApiMobile::Merchants::UpdateDomainService.new(merchant, new_domain).run
+#   - 08a-Change Domain Notice
+#   - return Merchant
+
+# ApiMobile::Merchants::ToggleCashOnDeliveryService.new(merchant)
+#   - 09a-Setup Payment-Enable
+#   - return Merchant
+
+# ApiMobile::Merchants::UpdateCitruspayService.new(merchant, params)
+#   - 09a-Setup Payment-CitrusExist
+#   - 15-*
+#   - return Merchant
+
+# ApiMobile::Merchants::ToggleCitruspayService.new(merchant)
+#   - 09a-Setup Payment-Enabled
+#   - return Merchant
+
+# ApiMobile::Merchants::PublishService.new(merchant)
+#   - 10a-Complete
+#   - 10c-StoreHome-Thumb
+#   - 12-Settings
+#   - return Merchant
+
+# ApiMobile::Merchants::UnPublishService.new(merchant)
+#   - 10c-StoreHome-Thumb
+#   - 12-Settings
+#   - return Merchant
+
+# ApiMobile::Merchants::CreateCoverImageService.new(merchant, cover_url)
+#   - 10ac-StoreHome-Thumb
+#   - return Merchant
+
+# ApiMobile::Merchants::UpdateShippingService.new(merchant, params).run
+#   - 17-Shipping Cost
+#   - return Merchant
+
+# ApiMobile::FetchS3UploadingDataService.new(merchant).run
+#   - ref: builder_controller#image_upload_form
+
+# ApiMobile::Products::CreateService.new(merchant).run(params)
+#   - 06b
+#   - return Product
+
+# ApiMobile::Products::UpdateService.new(merchant, product).run(params)
+#   - 06b
+#   - return Product
+
+# ApiMobile::Notifications::CreateService.new(merchant).run(params, mobile_push: true)
+#   - using in other services, such as order creation.
+#   - return Notification
+
+# Done:
+
+# ApiMobile::Users::ResetPasswordsService.new(email).run
+# ApiMobile::FacebookTokenAuthService.new(params).run
+# ApiMobile::GoogleTokenAuthService.new(params).run
+# ApiMobile::ExternalUserRegisterService(sign_up_params, home_country, remote_ip).run
+# ApiMobile::MerchantAllOrdersQuery.new(merchant).query
+# ApiMobile::MerchantUnshippedOrdersQuery.new(merchant).query
+# ApiMobile::Orders::MarkShippedService.new(order).run
+# ApiMobile::Orders::MarkUnshippedService.new(order).run
+# ApiMobile::Orders::MarkCancelledService.new(order).run
+# ApiMobile::Orders::MarkDeliveredService.new(order).run
+# ApiMobile::Merchants::UpdateSocialMediaService.new(merchant, params).run
+# ApiMobile::Merchants::UpdateTaxService.new(merchant, params).run
+# ApiMobile::Users::UpdatePasswordsService.new(merchant).run(params)
+
+# 2nd phase
+
+# ApiMobile::MerchantSearchOrdersQuery.new(merchant, keyword).query
+#   - 11c-2nd-Order Search
+#   - return Order[]

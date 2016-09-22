@@ -1,0 +1,26 @@
+headers:
+  SHOPMATIC_CS:
+    description: checksum
+    type: string
+    required: true
+    example: ignore_auth
+  SHOPMATIC_UUID:
+    description: mobile uuid
+    type: string
+    required: true
+    example: abcdefgh123456789
+  SHOPMATIC_TS:
+    description: timestamp
+    type: integer
+    required: true
+    example: 1234567890
+  Accept:
+    description: api versioning
+    type: string
+    required: false
+    example: application/vnd.shopmatic.v1
+responses:
+  401:
+    body:
+      application/json:
+        type: ErrorObject

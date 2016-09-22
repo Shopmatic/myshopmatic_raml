@@ -1,0 +1,43 @@
+description: |
+  Update merchant profile.
+  page => 13
+queryParameters:
+  merchant[first_name]:
+    type: string
+    required: true
+  merchant[last_name]:
+    type: string
+    required: true
+  merchant[name]: # TODO: q on zeplin 13
+    type: string
+    required: true
+    example: "abc store"
+  merchant[email]: # TODO: q on zeplin 13
+    type: string
+    required: true
+    example: "abc@abc.com"
+  merchant[phone]: # TODO: q on zeplin 13
+    type: string
+    required: false
+    example: "09123456789"
+  merchant[address][address]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[address][city]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[address][state]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[address][country]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[address][zip_code]: # TODO: q on zeplin 08a
+    type: string
+    required: true
+  merchant[description]: # TODO: q on zeplin 13
+    type: string
+    required: false
+    example: "abcabanc"
+responses:
+  200: !include ../../includes/respond_merchant.raml

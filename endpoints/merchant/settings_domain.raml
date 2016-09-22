@@ -1,0 +1,24 @@
+post:
+  description: |
+    Update new subdomain to merchant. Fail if subdomain not valid or already updated.
+    page => 08a
+  queryParameters:
+    domain[name]:
+      type: string
+      required: true
+      example: "abc-store"
+
+/valid:
+  get:
+    description: |
+      Validates subdomain uniquness and format
+      pages => 08a
+      If error, status will be 400, and `code` should be `domain_validates_fail`
+    queryParameters:
+      domain[name]:
+        type: string
+        required: true
+        example: "abc-store"
+    responses:
+      200: !include ../../includes/respond_ok.raml
+      400: !include ../../includes/respond_error.raml

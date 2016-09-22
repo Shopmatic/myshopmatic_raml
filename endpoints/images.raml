@@ -1,0 +1,11 @@
+is: [ session_secured ]
+post:
+  description: "Fetch s3 bucket hashed url for uploading image"
+  responses:
+    200:
+      body:
+        application/json:
+          type: object
+          properties: # ref: builder_controller#image_upload_form
+            url?: string
+            data?: string
