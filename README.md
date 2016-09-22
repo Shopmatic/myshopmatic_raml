@@ -4,11 +4,17 @@
 
 # Modify RAMLs
 
+- repo: https://github.com/Shopmatic/myshopmatic/
 - in `./doc/api_mobile/ramls/*.raml`
 
 # Publishing
 
+- in repo: https://github.com/Shopmatic/myshopmatic/
 - `rake raml:publish`
+
+# Published repo
+
+- https://github.com/Shopmatic/myshopmatic_raml
 
 # Debug and preview
 
