@@ -17,4 +17,4 @@ To test and debug, You can try this endpoint:
 # SUPER MODE
 
 This mode only for staging and development ENV.
-For skipping client authentication, you can set `SHOPMATIC_CS` value to `shopmatic-5x-ruby` only, and server will pass the authentication.
+For skipping client authentication, you can set `SHOPMATIC_CS` value to `5xrubygogogo` only, and server will pass the authentication.
