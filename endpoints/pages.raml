@@ -31,29 +31,3 @@ get:
             type: object
             properties:
               page: Page
-
-/set_cover_photo:
-  is: [ session_secured ]
-  post:
-    description: Set cover photo image for all-products page
-    body:
-      appliaction/json:
-        type: object
-        properties:
-          cover_photo_image_url: Url
-    response:
-      200:
-        body:
-          application/json:
-            type: object
-            properties:
-              message: successfull
-      400:
-        body:
-          application/json:
-            type: object
-            properties:
-              message:
-                type: string
-                description: error message
-                example: not accepted file format
