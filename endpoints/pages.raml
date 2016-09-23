@@ -1,0 +1,59 @@
+get:
+  description: Get All Pages
+  responses:
+    200:
+      body:
+        application/json:
+          type: object
+          properties:
+            pages?: Page[]
+
+/{pageName}:
+  is: [ session_secured ]
+  uriParameters:
+    pageName:
+      type: string
+      description: Lowercase Page Name, space replaced by hyphen
+      example: all-products
+  get:
+    description: Show Site page
+  put:
+    description: Update Site page
+    body:
+      application/json:
+        type: object
+        properties:
+          page: Page
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              page: Page
+
+/set_cover_photo:
+  is: [ session_secured ]
+  post:
+    description: Set cover photo image for all-products page
+    body:
+      appliaction/json:
+        type: object
+        properties:
+          cover_photo_image_url: Url
+    response:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              message: successfull
+      400:
+        body:
+          application/json:
+            type: object
+            properties:
+              message:
+                type: string
+                description: error message
+                example: not accepted file format

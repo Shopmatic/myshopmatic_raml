@@ -1,0 +1,28 @@
+type: object
+properties:
+  id: number
+  name: string
+  options:
+    type: object
+    properties:
+      title:
+        type: string
+        description: 'Page Alias Name'
+      description?:
+        type: string
+        description: 'Page Meta Description'
+      seo-title:
+        type: string
+        description: 'Page Title'
+  content:
+    type: object
+    properties:
+      banner?:
+        type: object
+        properties:
+          image_url?:
+            type: string
+            description: 'Image URL for Banner'
+          link_to_url?:
+            type: string
+            description: 'URL redirected to when clicking banner'

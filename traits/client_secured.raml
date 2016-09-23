@@ -3,15 +3,17 @@ headers:
     description: checksum
     type: string
     required: true
-    example: '5xrubygogogo'
+    example: ignore_auth
   SHOPMATIC_UUID:
     description: mobile uuid
     type: string
-    required: false
+    required: true
+    example: abcdefgh123456789
   SHOPMATIC_TS:
     description: timestamp
     type: integer
-    required: false
+    required: true
+    example: 1234567890
   Accept:
     description: api versioning
     type: string
