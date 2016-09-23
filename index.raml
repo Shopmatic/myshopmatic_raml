@@ -4,6 +4,7 @@ version: 0.1
 protocols: [ HTTP, HTTPS ]
 mediaType: 'application/json'
 baseUri: https://api.shopmakerapp.com
+# baseUri: https://api.shopmatic.dev # for local testing
 traits: !include traits.raml
 types: !include types.raml
 securitySchemes:
@@ -11,6 +12,15 @@ securitySchemes:
     type: x-custom
     describedBy: !include traits/client_secured.raml
 securedBy: [ client_secured ]
+documentation:
+  - title: 'Getting start'
+    content: !include documentation/getting-start.markdown
+  - title: 'Client authentication'
+    content: !include documentation/client-auth.markdown
+  - title: 'User authentication'
+    content: !include documentation/user-auth.markdown
+  - title: 'Image upload'
+    content: !include documentation/image-upload.markdown
 /signup: !include endpoints/signup.raml
 /sessions: !include endpoints/sessions.raml
 /passwords: !include endpoints/passwords.raml
