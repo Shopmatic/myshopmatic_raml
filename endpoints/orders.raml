@@ -1,3 +1,4 @@
+is: [ session_secured ]
 get:
   is: [ pagination ]
   description: |
@@ -7,13 +8,14 @@ get:
     200: !include ../includes/respond_orders.raml
 /unshipped:
   get:
-    is: [ pagination ]
+    is: [ pagination, session_secured ]
     description: |
       Get unshipped orders.
       pages => 11b
     responses:
       200: !include ../includes/respond_orders.raml
 /{order_code}:
+  is: [ session_secured ]
   uriParameters:
     order_code:
       type: string
@@ -26,6 +28,7 @@ get:
     responses:
       200: !include ../includes/respond_order_in_detail.raml
   /shipped:
+    is: [ session_secured ]
     put:
       description: |
         Change order status to shipped.
@@ -33,6 +36,7 @@ get:
       responses:
         200: !include ../includes/respond_order.raml
   /unshipped:
+    is: [ session_secured ]
     put:
       description: |
         Change order status to unshipped.
@@ -40,6 +44,7 @@ get:
       responses:
         200: !include ../includes/respond_order.raml
   /canceled:
+    is: [ session_secured ]
     put:
       description: |
         Change order status to canceled.
@@ -47,6 +52,7 @@ get:
       responses:
         200: !include ../includes/respond_order.raml
   /delivered:
+    is: [ session_secured ]
     put:
       description: |
         Change order status to delivered.

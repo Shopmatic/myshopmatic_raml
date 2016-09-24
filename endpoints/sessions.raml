@@ -1,6 +1,8 @@
 /email:
   post:
-    description: user login by email
+    description: |
+      User login by email.
+      Same user will have multiple tokens, and these tokens will not to be expired.
     queryParameters:
       user[email]:
         type: string
@@ -22,16 +24,14 @@
 
 /facebook:
   post:
-    description: user login by facebook
+    description: |
+      User login by facebook.
+      Same user will have multiple tokens, and these tokens will not to be expired.
     queryParameters:
       user[email]:
         type: string
         required: true
         example: 'ilake@5xruby.tw'
-      user[provider]:
-        type: string
-        required: true
-        example: 'facebook'
       user[uid]:
         type: string
         required: true
@@ -52,16 +52,14 @@
 
 /googleplus:
   post:
-    description: user login by Google
+    description: |
+      User login by Google.
+      Same user will have multiple tokens, and these tokens will not to be expired.
     queryParameters:
       user[email]:
         type: string
         required: true
         example: 'ilake@5xruby.tw'
-      user[provider]:
-        type: string
-        required: true
-        example: 'facebook'
       user[uid]:
         type: string
         required: true
@@ -83,5 +81,7 @@ delete:
   description: |
     Logout
     pages => 12
+  queryParameters:
+    user_token: string
   responses:
     200: !include ../includes/respond_ok.raml

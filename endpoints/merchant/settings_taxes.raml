@@ -1,21 +1,22 @@
+is: [ session_secured ]
 put:
   description: |
     Update tax fields of merchant.
     page => 16
   queryParameters:
-    setting[sales]:
+    settings[sales]:
       type: number
       required: false
       example: 1
-    setting[vat]:
+    settings[vat]:
       type: number
       required: false
       example: 1
-    setting[service]:
+    settings[service]:
       type: number
       required: false
       example: 1
-    setting[excise]:
+    settings[excise]:
       type: number
       required: false
       example: 1

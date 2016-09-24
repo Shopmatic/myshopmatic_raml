@@ -20,7 +20,29 @@ queryParameters:
     required: false
     example: 123.123
     description: "MRP"
-  product[category]:
+  product[category_name]:
     type: string
     required: false
     example: "Bag"
+  product[images]:
+    type: string
+    description: |
+      JSON format as following
+      ```
+      [
+        { "lq_img_url": "https://i.imgur.com/0PXKJKD.jpg",
+          "hq_img_url": "https://i.imgur.com/0PXKJKD.jpg"
+        },
+        { "lq_img_url": "https://i.imgur.com/0PXKJKD.jpg",
+          "hq_img_url": "https://i.imgur.com/0PXKJKD.jpg"
+        },
+        { "lq_img_url": "https://i.imgur.com/0PXKJKD.jpg",
+          "hq_img_url": "https://i.imgur.com/0PXKJKD.jpg"
+        },
+        { "lq_img_url": "https://i.imgur.com/0PXKJKD.jpg",
+          "hq_img_url": "https://i.imgur.com/0PXKJKD.jpg"
+        }
+      ]
+      ```
+    required: true
+    example: '[{"lq_img_url":"https://i.imgur.com/0PXKJKD.jpg","hq_img_url":"https://i.imgur.com/0PXKJKD.jpg"}]'

@@ -1,5 +1,6 @@
 # TODO: q on zeplin 15
 /toggle-cash-on-delivery:
+  is: [ session_secured ]
   put:
     description: |
       Toggle cash on delivery for merchant
@@ -7,6 +8,7 @@
     responses:
       200: !include ../../includes/respond_merchant.raml
 /toggle-citrus:
+  is: [ session_secured ]
   put:
     description: |
       Toggle citrus pay for merchant
@@ -14,6 +16,7 @@
     responses:
       200: !include ../../includes/respond_merchant.raml
 /citrus:
+  is: [ session_secured ]
   put:
     queryParameters:
       citrus[access_key]:

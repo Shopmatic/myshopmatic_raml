@@ -5,9 +5,11 @@ queryParameters:
   merchant[first_name]:
     type: string
     required: true
+    example: 'Mars'
   merchant[last_name]:
     type: string
     required: true
+    example: 'Chen'
   merchant[name]: # TODO: q on zeplin 13
     type: string
     required: true
@@ -19,25 +21,33 @@ queryParameters:
   merchant[phone]: # TODO: q on zeplin 13
     type: string
     required: false
-    example: "09123456789"
-  merchant[address][address]: # TODO: q on zeplin 08a
+    example: "12345678"
+  merchant[address][street_address]:
     type: string
     required: true
-  merchant[address][city]: # TODO: q on zeplin 08a
+    example: '9 Cheong Wan Road'
+  merchant[address][city]:
     type: string
     required: true
-  merchant[address][state]: # TODO: q on zeplin 08a
+    example: 'Hung Hom'
+  merchant[address][state]:
     type: string
     required: true
-  merchant[address][country]: # TODO: q on zeplin 08a
+    example: 'Kowloon city'
+  merchant[address][country]:
     type: string
     required: true
-  merchant[address][zip_code]: # TODO: q on zeplin 08a
+    example: 'HK'
+  merchant[address][zip_code]:
     type: string
     required: true
+    example: '110001'
   merchant[description]: # TODO: q on zeplin 13
     type: string
     required: false
     example: "abcabanc"
+  merchant[notification_email]:
+    type: string
+    required: false
 responses:
   200: !include ../../includes/respond_merchant.raml

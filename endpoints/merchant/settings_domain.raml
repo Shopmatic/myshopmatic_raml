@@ -1,3 +1,4 @@
+is: [ session_secured ]
 post:
   description: |
     Update new subdomain to merchant. Fail if subdomain not valid or already updated.
@@ -9,6 +10,7 @@ post:
       example: "abc-store"
 
 /valid:
+  is: [ session_secured ]
   get:
     description: |
       Validates subdomain uniquness and format

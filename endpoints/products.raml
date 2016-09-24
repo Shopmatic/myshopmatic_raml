@@ -24,6 +24,7 @@ post:
           properties:
             product?: Product
 /{product_id}:
+  is: [ session_secured ]
   uriParameters:
     product_id:
       type: number

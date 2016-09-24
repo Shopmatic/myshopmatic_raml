@@ -1,3 +1,4 @@
+is: [ session_secured ]
 get:
   is: [ pagination ]
   description: |
@@ -12,6 +13,7 @@ get:
             notifications?: Notification[]
             pagination: Pagination
 /{notification_id}:
+  is: [ session_secured ]
   uriParameters:
     notification_id:
       type: number
