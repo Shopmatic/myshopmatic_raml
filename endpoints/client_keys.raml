@@ -1,0 +1,17 @@
+post:
+  securedBy: [ ]
+  description: 'Get unique key for checksum encryption'
+  queryParameters:
+    uuid:
+      required: true
+      type: string
+      example: '12341234'
+      description: 'uuid of device'
+  responses:
+    200:
+      body:
+        application/json:
+          type: object
+          properties:
+            client_key?: string
+
