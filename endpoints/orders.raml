@@ -27,6 +27,19 @@ get:
       pages => 11d
     responses:
       200: !include ../includes/respond_order_in_detail.raml
+  /note:
+    is: [ session_secured ]
+    put:
+      description: |
+        Update order note.
+        page => 11d
+      queryParameters:
+        order[note]:
+          type: string
+          required: true
+          example: "Order note"
+      responses:
+        200: !include ../includes/respond_order.raml
   /shipped:
     is: [ session_secured ]
     put:
