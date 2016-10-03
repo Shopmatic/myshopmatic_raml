@@ -17,6 +17,15 @@ get:
       example: all-products
   get:
     description: Show Site page
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              page: Page
+      404:
+        description: Page not found
   put:
     description: Update Site page
     body:
@@ -31,6 +40,74 @@ get:
             type: object
             properties:
               page: Page
+      406:
+        description: Display messages if page not found, service not created or some error happened
+        body:
+          application/json:
+            type: object
+            properties:
+              message:
+                type: string
+
+/all-products/changable_values:
+  is: [ session_secured ]
+  get:
+    description: Get fields which can be modified
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              changable_values:
+                type: object
+                properties:
+                  banner_image_url:
+                    type: string
+                    description: cover photo image url
+
+/about-us/changable_values:
+  is: [ session_secured ]
+  get:
+    description: Get fields which can be modified
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              changable_values:
+                type: object
+                properties:
+                  about_us_text:
+                    type: string
+                    description: Information of the store & merchant
+                  store_address:
+                    type: string
+                    description: Address of this store
+                  store_phone:
+                    type: string
+                    description: Phone of this store
+                  store_email:
+                    type: string
+                    description: E-mail of this merchant
+
+/shipping-returns/changable_values:
+  is: [ session_secured ]
+  get:
+    description: Get fields which can be modified
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              changable_values:
+                type: object
+                properties:
+                  shipping_returns_text:
+                    type: string
+                    description: Text of Shipping & Returns
 
 /set_cover_photo:
   is: [ session_secured ]
@@ -40,8 +117,11 @@ get:
       appliaction/json:
         type: object
         properties:
-          cover_photo_image_url: Url
-    response:
+          cover_photo_image_url:
+            type: string
+            description: cover photo image url
+            example: https://d2y16r5m9dfvn.cloudfront.net/images/1Y6ELY/mQ1QpqNMYG.png
+    responses:
       200:
         body:
           application/json:
