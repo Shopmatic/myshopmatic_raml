@@ -13,6 +13,7 @@ get:
   uriParameters:
     pageName:
       type: string
+      enum: ['all-products', 'about-us', 'shipping-returns']
       description: Lowercase Page Name, space replaced by hyphen
       example: all-products
   get:
@@ -28,6 +29,36 @@ get:
         description: Page not found
   put:
     description: Update Site page
+    queryParameters:
+      banner_image_url:
+        type: "string"
+        required: false
+        example: "https://d2y16r5m9dfvn.cloudfront.net/images/1Y6ELY/mQ1QpqNMYG.png"
+      about_us_text:
+        type: "string"
+        required: false
+        example: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      store_address:
+        type: "string"
+        required: false
+        example: "1A Infinity Loop Drive, 123456 New Delhi, Delhi, India"
+      store_phone:
+        type: "string"
+        required: false
+        example: "+91 1234567890"
+      store_email:
+        type: "string"
+        required: false
+        example: "johndoe@gmail.com"
+      toggle_address_map:
+        type: "string"
+        enum: ['disabled', 'enabled']
+        required: false
+        example: "disabled"
+      shipping_returns_text:
+        type: "string"
+        required: false
+        example: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     body:
       application/json:
         type: object
@@ -39,7 +70,8 @@ get:
           application/json:
             type: object
             properties:
-              page: Page
+              about_us_text:
+                type: string
       406:
         description: Display messages if page not found, service not created or some error happened
         body:
@@ -108,35 +140,3 @@ get:
                   shipping_returns_text:
                     type: string
                     description: Text of Shipping & Returns
-
-/set_cover_photo:
-  is: [ session_secured ]
-  post:
-    description: Set cover photo image for all-products page
-    body:
-      appliaction/json:
-        type: object
-        properties:
-          cover_photo_image_url:
-            type: string
-            description: cover photo image url
-            example: https://d2y16r5m9dfvn.cloudfront.net/images/1Y6ELY/mQ1QpqNMYG.png
-    responses:
-      200:
-        body:
-          application/json:
-            type: object
-            properties:
-              message:
-                type: string
-                description: success message
-                example: successfull
-      400:
-        body:
-          application/json:
-            type: object
-            properties:
-              message:
-                type: string
-                description: error message
-                example: not accepted file format
