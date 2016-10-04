@@ -53,5 +53,10 @@ queryParameters:
   merchant[notification_email]:
     type: string
     required: false
+  merchant[toggle_address_map]:
+    type: string
+    required: false
+    enum: ['disabled', 'enabled']
+    example: 'disabled'
 responses:
   200: !include ../../includes/respond_merchant.raml
