@@ -14,12 +14,14 @@ queryParameters:
     type: string
     required: true
     example: "abc store"
-    description: correspond to merchant site's logo_brand_text
+  merchant[email]: # TODO: q on zeplin 13
+    type: string
+    required: true
+    example: "abc@abc.com"
   merchant[phone]: # TODO: q on zeplin 13
     type: string
     required: false
     example: "12345678"
-    description: correspond to merchant about-us page's store_phone
   merchant[address][landmark]:
     type: string
     required: true
@@ -28,7 +30,6 @@ queryParameters:
     type: string
     required: true
     example: '9 Cheong Wan Road'
-    description: correspond to about-us page's store_address , and will combination full address through by shipping-address.
   merchant[address][city]:
     type: string
     required: true
@@ -49,16 +50,8 @@ queryParameters:
     type: string
     required: false
     example: "abcabanc"
-    description: correspond to about-us page's about_us_text
   merchant[notification_email]:
     type: string
     required: false
-    description: correspond to about-us page's store_email
-  merchant[toggle_address_map]:
-    type: string
-    required: false
-    enum: ['disabled', 'enabled']
-    example: 'disabled'
-    description: correspond to about-us page's toggle_address_map
 responses:
   200: !include ../../includes/respond_merchant.raml

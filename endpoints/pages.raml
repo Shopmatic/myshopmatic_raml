@@ -24,38 +24,7 @@ get:
           application/json:
             type: object
             properties:
-              page_value:
-                type: object
-                description: "return page of page_value"
-                properties:
-                  banner_image_url:
-                    type: 'string'
-                    required: false
-                    description: "include if page is all-products"
-                  about_us_text:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
-                  store_address:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
-                  store_phone:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
-                  store_email:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
-                  toggle_address_map:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
-                  shipping_returns_text:
-                    type: "string"
-                    required: false
-                    description: "include if page is shipping-return"
+              page: Page
       404:
         description: Page not found
   put:
@@ -65,89 +34,108 @@ get:
         type: "string"
         required: false
         example: "https://d2y16r5m9dfvn.cloudfront.net/images/1Y6ELY/mQ1QpqNMYG.png"
-        description: "for all-products"
       about_us_text:
         type: "string"
         required: false
         example: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-        description: "for about-us"
       store_address:
         type: "string"
         required: false
         example: "1A Infinity Loop Drive, 123456 New Delhi, Delhi, India"
-        description: "for about-us"
       store_phone:
         type: "string"
         required: false
         example: "+91 1234567890"
-        description: "for about-us"
       store_email:
         type: "string"
         required: false
         example: "johndoe@gmail.com"
-        description: "for about-us"
       toggle_address_map:
         type: "string"
         enum: ['disabled', 'enabled']
         required: false
         example: "disabled"
-        description: "for about-us"
       shipping_returns_text:
         type: "string"
         required: false
         example: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-        description: "for shipping-returns"
+    body:
+      application/json:
+        type: object
+        properties:
+          page: Page
     responses:
       200:
         body:
           application/json:
             type: object
             properties:
-              page_value:
+              page: Page
+      406:
+        description: Display messages if page not found, service not created or some error happened
+        body:
+          application/json:
+            type: object
+            properties:
+              message:
+                type: string
+
+/all-products/changable_values:
+  is: [ session_secured ]
+  get:
+    description: Get fields which can be modified
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              changable_values:
                 type: object
-                description: "if success update then will return updated page_value"
                 properties:
                   banner_image_url:
-                    type: 'string'
-                    required: false
-                    description: "include if page is all-products"
+                    type: string
+                    description: cover photo image url
+
+/about-us/changable_values:
+  is: [ session_secured ]
+  get:
+    description: Get fields which can be modified
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              changable_values:
+                type: object
+                properties:
                   about_us_text:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
+                    type: string
+                    description: Information of the store & merchant
                   store_address:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
+                    type: string
+                    description: Address of this store
                   store_phone:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
+                    type: string
+                    description: Phone of this store
                   store_email:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
-                  toggle_address_map:
-                    type: "string"
-                    required: false
-                    description: "include if page is about-us"
+                    type: string
+                    description: E-mail of this merchant
+
+/shipping-returns/changable_values:
+  is: [ session_secured ]
+  get:
+    description: Get fields which can be modified
+    responses:
+      200:
+        body:
+          application/json:
+            type: object
+            properties:
+              changable_values:
+                type: object
+                properties:
                   shipping_returns_text:
-                    type: "string"
-                    required: false
-                    description: "include if page is shipping-return"
-      404:
-        description: Display messages if page not found.
-        body:
-          application/json:
-            type: object
-            properties:
-              message:
-                type: string
-      406:
-        description: Display messages if service not created or some error happened.
-        body:
-          application/json:
-            type: object
-            properties:
-              message:
-                type: string
+                    type: string
+                    description: Text of Shipping & Returns
