@@ -1,11 +1,4 @@
-/toggle-order-push-notifications:
-  is: [ session_secured ]
-  put:
-    description: |
-      Toggle order push notification
-      page => 12
-    responses:
-      200: !include ../../includes/respond_merchant.raml
+/push-notification: !include ./settings_push_notification.raml
 /payments: !include ./settings_payments.raml
 /social-media: !include ./settings_social_media.raml
 /taxes: !include ./settings_taxes.raml

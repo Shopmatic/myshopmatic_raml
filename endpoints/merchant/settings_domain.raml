@@ -8,6 +8,8 @@ post:
       type: string
       required: true
       example: "abc-store"
+  responses:
+    200: !include ../../includes/respond_merchant.raml
 
 /valid:
   is: [ session_secured ]

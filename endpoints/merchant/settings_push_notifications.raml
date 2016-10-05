@@ -1,0 +1,19 @@
+is: [ session_secured ]
+post:
+  description: |
+    Enable push notification
+    page => 12
+  queryParameters:
+    device_token:
+      type: string
+      required: true
+      example: abcdabcd
+  responses:
+    200: !include ../../includes/respond_ok.raml
+
+delete:
+  description: |
+    Disable push notification
+    page => 12
+  responses:
+    200: !include ../../includes/respond_ok.raml
