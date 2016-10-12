@@ -151,3 +151,31 @@ get:
             properties:
               message:
                 type: string
+
+/reset_template:
+  is: [ session_secured ]
+  post:
+    description: Reset Mobile Template (Use for Development)
+    queryParameters:
+      reset:
+        type: "string"
+        required: false
+        example: "false"
+        enum: ['true', 'false']
+    responses:
+      200:
+        description: success
+        body:
+          application/json:
+            type: object
+            properties:
+              message:
+                type: string
+      406:
+        description: fail
+        body:
+          application/json:
+            type: object
+            properties:
+              message:
+                type: string

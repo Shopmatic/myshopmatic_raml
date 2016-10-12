@@ -18,13 +18,8 @@ queryParameters:
   merchant[phone]: # TODO: q on zeplin 13
     type: string
     required: false
-    example: "12345678"
-    description: correspond to user's phone
-  merchant[display_phone]:
-    type: string
-    required: false
-    example: "12345678"
-    description: correspond to merchant about-us page's store_phone
+    example: "9876543210"
+    description: correspond to user's phone AND about-us page's store_phone
   merchant[address][landmark]:
     type: string
     required: true
@@ -63,7 +58,7 @@ queryParameters:
     type: string
     required: false
     enum: ['disabled', 'enabled']
-    example: 'disabled'
+    example: 'enabled'
     description: correspond to about-us page's toggle_address_map
 responses:
   200: !include ../../includes/respond_merchant.raml
