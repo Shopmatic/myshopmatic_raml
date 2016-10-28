@@ -14,12 +14,14 @@ queryParameters:
     type: string
     required: true
     example: "abc store"
-    description: correspond to merchant site's logo_brand_text
+    description: |
+      will update Site when merchant: go
   merchant[phone]: # TODO: q on zeplin 13
     type: string
     required: false
     example: "9876543210"
-    description: correspond to user's phone AND about-us page's store_phone
+    description: |
+      will update Page: 'about-us' -> :store_phone, when merchant: go
   merchant[address][landmark]:
     type: string
     required: true
@@ -28,7 +30,9 @@ queryParameters:
     type: string
     required: true
     example: '9 Cheong Wan Road'
-    description: correspond to about-us page's store_address , and will combination full address through by shipping-address.
+    description: |
+      1. will update Page: 'about-us' -> :store_address, when merchant: go
+      2. combination full address through by shipping-address
   merchant[address][city]:
     type: string
     required: true
@@ -49,16 +53,20 @@ queryParameters:
     type: string
     required: false
     example: "abcabanc"
-    description: correspond to about-us page's about_us_text
+    description: |
+      will update Page: 'about-us' -> :about_us_text, when merchant: go
   merchant[notification_email]:
     type: string
     required: false
-    description: correspond to about-us page's store_email
+    description: |
+      will update Page: 'about-us' -> :store_email, when merchant: go
   merchant[toggle_address_map]:
     type: string
     required: false
     enum: ['disabled', 'enabled']
     example: 'enabled'
-    description: correspond to about-us page's toggle_address_map
+    description: |
+      will update Page: 'about-us' -> :toggle_address_map, when merchant: go
+
 responses:
   200: !include ../../includes/respond_merchant.raml
