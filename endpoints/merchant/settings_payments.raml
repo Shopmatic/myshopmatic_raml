@@ -37,6 +37,19 @@
     responses:
       200: !include ../../includes/respond_merchant.raml
   post:
+    queryParameters:
+      citrus[access_key]:
+        type: string
+        required: false
+        example: 'abcddefgh'
+      citrus[secret_key]:
+        type: string
+        required: false
+        example: 'abcddefgh'
+      citrus[vanity_url_part]:
+        type: string
+        required: false
+        example: 'abcddefgh'
     description: |
       Enable citrus pay
       page => 09b
