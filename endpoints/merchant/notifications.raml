@@ -19,6 +19,10 @@ get:
       type: number
       description: "Notification id"
       example: 123
+    notify_type:
+      type: string
+      description: "system or order_record"
+      example: 'system'
   get:
     description: |
       Get notification in detail.
@@ -30,4 +34,3 @@ get:
             type: object
             properties:
               notification?: Notification
-
