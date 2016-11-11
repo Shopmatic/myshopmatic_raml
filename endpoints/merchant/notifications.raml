@@ -19,15 +19,19 @@ get:
             pagination: Pagination
 /{notification_id}:
   is: [ session_secured ]
+  uriParameters:
+    notification_id:
+      type: number
+      description: "Notification id"
+      example: 123
+    notify_type:
+      type: string
+      description: "system or order_record"
+      example: 'system'
   get:
-    queryParameters:
-      notify_type:
-        type: string
-        description: "system or order_record"
-        example: 'system'
-      description: |
-        Get notification in detail.
-        pages => 18
+    description: |
+      Get notification in detail.
+      pages => 18
     responses:
       200:
         body:
