@@ -18,16 +18,17 @@ get:
             notifications?: Notification[]
             pagination: Pagination
 /{notification_id}:
+  queryParameters:
+    notify_type:
+      type: string
+      description: "system or order_record"
+      example: 'system'
   is: [ session_secured ]
   uriParameters:
     notification_id:
       type: number
       description: "Notification id"
       example: 123
-    notify_type:
-      type: string
-      description: "system or order_record"
-      example: 'system'
   get:
     description: |
       Get notification in detail.
