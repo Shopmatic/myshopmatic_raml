@@ -1,0 +1,14 @@
+is: [ session_secured ]
+post:
+  description: sent help email or feedback email
+  queryParameters:
+    email[subject]:
+      type: string
+      required: true
+      example: 'Feedback - Shopmatic Go'
+    email[content]:
+      type: string
+      required: true
+      example: 'email content lala'
+  responses:
+    200: !include ../includes/respond_ok.raml
