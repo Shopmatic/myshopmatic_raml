@@ -2,3 +2,15 @@ type: object
 properties:
   cash_on_delivery?: boolean
   citrus?: boolean
+  paypal_setup?:
+    type: boolean
+    description: integrated or on processing
+    example: true
+  paypal_enable?:
+    type: boolean
+    description: enabled
+    example: true
+  paypal_processing?:
+    type: boolean
+    description: on processing
+    example: true
