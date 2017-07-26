@@ -69,21 +69,11 @@
       Query paypal status for merchant
     responses:
       200: !include ../../includes/respond_merchant.raml
-  post:
-    queryParameters:
-      paypal[merchant_code]:
-        type: string
-        required: true
-        example: 'D5ZEW5'
-      paypal[merchant_id_in_paypal]:
-        type: string
-        required: true
-        example: '6DF7N6NSYFTNU'
-      paypal[permissions_granted]:
-        type: boolean
-        required: true
-        example: true
+/paypal-isu-onboarding-url:
+  is: [ session_secured ]
+  get:
     description: |
-      Send Paypal ISU onboarding returned data to server
+      Get the paypal ISU onboarding url
     responses:
-      200: !include ../../includes/respond_merchant.raml
+      200: !include ../../includes/respond_paypal_isu_onboarding_url.raml
+
